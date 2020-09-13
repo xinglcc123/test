@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- 計算機內容 -->
+    <div class="t-body">
+        <table>
+            <tr>
+                <th colspan="4" class="result"><input id="output" class="box" readonly="readonly"></th>
+
+            </tr>
+            <tr>
+                <th><button class="num">9</button> </th>
+                <th><button class="num">8</button> </th>
+                <th><button class="num">7</button> </th>
+                <th><button class="operator">÷</button> </th>
+
+
+            </tr>
+            <tr>
+                <th><button class="num">4</button> </th>
+                <th><button class="num">5</button> </th>
+                <th><button class="num">6</button> </th>
+                <th><button class="operator">*</button> </th>
+
+
+
+            </tr>
+            <tr>
+                <th><button class="num">1</button> </th>
+                <th><button class="num">2</button> </th>
+                <th><button class="num">3</button> </th>
+                <th><button class="operator">+</button> </th>
+
+            </tr>
+            <tr>
+                <th><button class="operator2">AC</button> </th>
+                <th><button class="num">0</button> </th>
+                <th><button class="operator4">=</button> </th>
+                <th><button class="operator">-</button> </th>
+            </tr>
+
+        </table>
+
+        <!-- 計算機Javascript -->
+        <script>
+            var temp = 0; //暫存被運算數
+
+            var strOper = 0; //暫存運算符號
+
+            var valueM = 0; // AC 暫存使用
+
+
+            var num = document.getElementsByClassName("num");
+            var oper = document.getElementsByClassName("operator");
+            var Btn = document.getElementsByClassName("operator2");
+            var equal = document.getElementsByClassName("operator4");
+            window.addEventListener("load", () => {
+                for (let i = 0; i < num.length; i++) {
+                    num[i].addEventListener('click', cal.numBtn);
+                }
+                for (let a = 0; a < oper.length; a++) {
+                    oper[a].addEventListener('click', cal.operBtn);
+                }
+                Btn[0].addEventListener('click', cal.Btn);
+                equal[0].addEventListener('click', cal.equal);
+            })
+
+
+
+
+            var cal = {
+
+                //數字鍵
+                numBtn: () => {
+
+                    if (document.getElementById("output").value == 0) {
+                        document.getElementById("output").value = event.target.innerHTML;
+                    } else {
+                        document.getElementById("output").value += event.target.innerHTML;
+                    }
+                },
+                //運算符號
+
+                operBtn: () => {
+
+                    //不按等號的連續運算
+
+                    cal.equal();
+
+                    valueA = document.getElementById("output").value;
+                    strOper = event.target.innerHTML;
+
+                    document.getElementById("output").value = 0;
+                },
+                //等於
+
+                equal: () => {
+
+                    switch (strOper) {
+                        case '+':
+                            document.getElementById("output").value = parseFloat(valueA) + parseFloat(document.getElementById("output").value);
+                            break;
+                        case '-':
+                            document.getElementById("output").value = parseFloat(valueA) - parseFloat(document.getElementById("output").value);
+                            break;
+                        case '*':
+                            document.getElementById("output").value = parseFloat(valueA) * parseFloat(document.getElementById("output").value);
+                            break;
+                        case '÷':
+                            document.getElementById("output").value = parseFloat(valueA) / parseFloat(document.getElementById("output").value);
+                            break;
+                        default:
+                            break;
+                    }
+
+                },
+                //AC鍵
+
+                Btn: () => {
+                    temp = 0;
+                    strOper = 0;
+                    valueM = 0;
+                    document.getElementById("output").value = '0';
+                }
+            }
+        </script>
+</body>
+
+</html>

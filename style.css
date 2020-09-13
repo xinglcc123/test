@@ -1,0 +1,131 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #aed2dc;
+    /* background-image: linear-gradient(0deg, #8cbac9 0%, #bfe4f0 100%); */
+    background-blend-mode: normal, multiply;
+    background-blend-mode: multiply;
+    background-blend-mode: multiply, multiply;
+    animation-name: BG-color;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes BG-color {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+th {
+    padding-bottom: 25px;
+}
+
+.t-body {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+table {
+    transform: scale(0.8);
+    height: 490px;
+    width: 440px;
+    background-image: linear-gradient(0deg, #aed0db 0%, #b1d4df 100%);
+    border-radius: 50px;
+    padding: 30px;
+    box-shadow: 0px -10px 25px 0px rgba(0, 0, 0, 0.5) inset, 0px 10px 20px 0px rgba(0, 0, 0, 0.2), 0px 10px 20px 0px rgba(255, 255, 255, 0.5) inset;
+}
+
+.result {
+    color: white;
+    height: 140px;
+    direction: rtl;
+    border-radius: 130px;
+}
+
+.box {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    height: 80px;
+    width: 330px;
+    font-size: 3rem;
+    border-radius: 25px;
+    box-shadow: 0px 2px 3px 1px #aba491 inset;
+    padding: 0px 10px 0px 10px;
+}
+
+.operator2 {
+    background-color: whitesmoke;
+}
+
+.num {
+    background-color: white;
+}
+
+.num:hover,
+.operator2:hover {
+    /* color: black; */
+    filter: brightness(1.05);
+}
+
+.num:active {
+    box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.5), 0px 0px 1.5px 1px rgba(0, 0, 0, 0.2), 0px 5px 5px 0px rgba(255, 255, 255, 0.2)inset, 0px -5px 5px 0px rgba(0, 0, 0, 0.2)inset;
+}
+
+.operator:focus,
+.operator2:focus,
+.num:focus,
+.box:focus,
+.operator4:focus {
+    outline: none;
+}
+
+.operator:hover,
+.operator4:hover {
+    color: #aed0db;
+    filter: brightness(1.2);
+}
+
+.operator2:active,
+.operator:active,
+.operator4:active {
+    box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.8), 0px 0px 1.5px 1px rgba(0, 0, 0, 0.2), 0px 5px 5px 0px rgba(255, 255, 255, 0.2)inset, 0px -5px 5px 0px rgba(0, 0, 0, 0.2)inset;
+}
+
+.operator,
+.num,
+.operator2,
+.operator4 {
+    height: 60px;
+    width: 60px;
+    font-size: 2rem;
+    border: none;
+    background-image: linear-gradient(0deg, #96bbc7 0%, #b1d4df 100%);
+    box-shadow: 0px 5px 8px 1px rgba(0, 0, 0, 0.3), 0px 0px 1.5px 1px rgba(0, 0, 0, 0.2), 0px 5px 5px 0px rgba(255, 255, 255, 0.2)inset, 0px -5px 5px 0px rgba(0, 0, 0, 0.2)inset;
+    border-radius: 15px;
+    color: white;
+}
+
+.operator3 {
+    height: 70px;
+    width: 225px;
+    font-size: 3rem;
+    background-color: orange;
+    color: white;
+}
+
+.operator,
+.operator4 {
+    background-color: #54443f33;
+    color: white;
+    background-image: linear-gradient(0deg, #000000 0%, #585858 100%);
+    box-shadow: 0px 5px 8px 1px rgba(0, 0, 0, 0.3), 0px 0px 1.5px 1px rgba(0, 0, 0, 0.2), 0px 5px 5px 0px rgba(255, 255, 255, 0.2)inset, 0px -5px 5px 0px rgba(0, 0, 0, 0.2)inset;
+}
